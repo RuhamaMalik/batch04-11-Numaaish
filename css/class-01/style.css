@@ -1,0 +1,85 @@
+/* Global Selector */
+
+/* *{
+    color: brown;
+} */
+
+/* type / Element SeLector */
+
+/* p {
+  color: pink;
+  background-color: black;
+} */
+
+
+/* cLaSS SeLector */
+
+/* .green {
+    color: green;
+} */
+
+
+/* li.green{
+    color: rgb(4, 164, 196);
+} */
+
+/* h1.green{
+    color: aquamarine;
+} */
+
+/* Id SeLector */
+
+/* #pink{
+    color: pink;
+} */
+
+
+/* chILd SeLector (Direct child)*/
+
+
+/* ol>li>span{
+    color: crimson;
+} */
+
+/* deScendant SeLector (any level child)*/
+
+/* ol span{
+    color: crimson;
+} */
+
+
+
+/* adjacent SIBLIng SeLector */
+/* 
+h1+p{
+    color: blueviolet;
+} */
+
+/* generaL SIBLIng SeLector */
+/* h1~p{
+    color: crimson;
+} */
+
+
+/* 
+.heading , .para, li{
+    color: cadetblue;
+} */
+
+/*  Inheritance */
+
+/* body{
+    color: red;
+} */
+
+#inheritance{
+    color: rgb(43, 211, 226);
+    border: 2px solid green;
+    padding: 2em;
+
+}
+
+h1{
+    border: 2px solid rgb(13, 14, 13);
+    padding: inherit;
+}
