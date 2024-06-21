@@ -1,0 +1,59 @@
+/* h1{
+    color: green !important;
+} */
+
+.post{
+    background-color: rgb(99, 208, 255);
+}
+
+.post h1{
+    /* color: blueviolet; */
+    /* color: #6e779e; */
+    /* color: rgb(14, 91, 106); */
+    color:  hsla(0,80%,80%, 0.3);
+}
+
+.parent{
+    color: white;
+    margin: 0 auto;
+    width: 80%;
+}
+
+
+.child1{
+    background-color: aqua;
+}
+.child2{
+    background-color: rgb(9, 235, 235);
+}
+.child3{
+    background-color: rgb(10, 205, 205);
+}
+.child4{
+    background-color: rgb(11, 185, 185);
+}
+.child5{
+    background-color: rgb(8, 157, 157);
+}
+
+
+
+.myh1{
+    font-family: poppins , monospace;
+    font-weight:lighter;
+}
+.para2{
+    font-size: 16px;
+}
+.para{
+    /* font-size: 36px ; */
+    font-size: 100%;
+}
+
+.para3{
+font-size: 2em;
+/* font-size: 50vmax ; */
+/* font-weight: bold; */
+font-weight: 900;
+font-style: italic;
+}
