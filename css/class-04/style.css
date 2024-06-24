@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&family=Space+Grotesk:wght@300..700&display=swap');
+
+
+/* @font-face {
+    font-family: Aldrich;
+   src: url(./assets/fonts/Aboreto-Regular.ttf);
+} */
+
+/* @font-face {
+    font-family: font2;
+    src: url(./assets/fonts/PlaywriteAUVIC-Light.ttf);
+} */
+
+
+
+/* h3{ */
+   /* font-family: Aldrich;  */
+   /* font-family:font2; */
+
+
+/* 
+   font-family: "Playwrite AU VIC", cursive;
+   
+} */
+
+/* p{
+    font-family: "Playwrite AU VIC", cursive;
+} */
+
+
+
+/* h3{ */
+    /* font-family: "LXGW WenKai Mono TC", monospace; */
+
+
+    /* font-family: "Space Grotesk", sans-serif;
+    font-weight: 900; */
+/* } */
+
+
+
+/* h1{
+    text-transform: uppercase;
+}
+
+h2{
+    text-transform: lowercase;
+}
+
+h3{
+    text-transform: capitalize;
+} */
+
+h1{
+  /* text-decoration: underline;   */
+  /* text-decoration: overline;   */
+}
+
+.para{
+/* line-height: 200%; */
+word-spacing: 15px;
+letter-spacing: 5px;
+}
+
+span{
+    text-transform: uppercase;
+    font-size: 48px;
+}
+
+a{
+    color: crimson;
+    text-decoration: none;
+}
+
+.text-align{
+    text-indent: 80px
+   /* text-align: right;  */
+   /* text-align: justify;  */
+}
+
+.shadow{
+    text-shadow: 2px 12px 14px rgba(206,89,55,0.66);}
