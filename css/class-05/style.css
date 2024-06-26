@@ -1,0 +1,114 @@
+/* p{
+    color: lightcoral;
+    line-height: 15px;
+}
+
+span{
+    color: blueviolet;
+    vertical-align: text-bottom ;
+} */
+
+/* .para1:first-letter{
+    color: red;
+    font-size: 5em;
+}
+
+.para2:first-line{
+    color: blue;
+}
+
+
+.l{
+color: pink;
+text-decoration: none;
+}
+
+.l:visited{
+    color: burlywood;
+}
+
+
+.l:hover{
+    border: 2px solid brown;
+}
+
+.hover:hover{
+    color: plum;
+    background-color: black;
+    font-size: 60px;
+}
+
+
+.myInput:focus{
+background-color: gray;
+border: none;
+outline: none;
+}
+
+button:hover{
+background-color: blueviolet;
+color: white;
+border: none;
+outline: none;
+
+}
+
+button:active{
+    width: 200px;
+    background-color: red;
+} */
+
+/* .box {
+  background-color: blue;
+  width: 300px;
+  height: 300px;
+}
+
+.child {
+  background-color: rgb(41, 218, 249);
+  width: 50%;
+  height: 50%;
+} */
+
+
+/* .card{
+    background-color: rgb(41, 218, 249);
+    max-width: 700px;
+    min-width: 280px;
+    height: 400px;
+} */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* .container{
+    width: 25vw;
+    height: 100vh;
+    background-color: cyan;
+    overflow: auto;
+} */
+
+.box{
+    background-color: rgb(216, 243, 191);
+    width: 200px;
+    height: 200px;
+    /* border-width: 5px 10px 15px 20px;
+    border-style: solid dotted dashed double;
+    border-color: red orange yellow lightgreen; */
+/* padding:  5px 10px 15px 20px; */
+/* padding:  5px 30px ; */
+padding:  30px ;
+margin-bottom: 5px;
+    border: 5px solid rgb(9, 18, 0);
+}
+
+.abcd{
+    color: salmon;
+    text-decoration: none;
+}
+
+.abcd:hover{
+border-bottom: 2px solid salmon ;
+}
