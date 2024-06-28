@@ -1,0 +1,126 @@
+/* .box{
+    height: 250px;
+    width: 200px;
+    background-color: rgb(249, 249, 149);
+    margin:  30vh auto 0 auto;
+    padding: 2em;
+    text-align: justify;
+} */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.card {
+  height: 250px;
+  width: 200px;
+  /* background-color: rgb(0, 0, 0);
+  border: 5px solid pink; */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+
+  font-family: sans-serif;
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.card img {
+  /* width: 100%;
+  height: 40%; */
+}
+
+.content {
+  /* width: 100%;
+  height: 55%; */
+  /* background-color: bisque; */
+  /* color: whitesmoke;
+  padding: 1em; */
+}
+
+.content p {
+  /* color: rgb(183, 186, 186);
+  font-size: small; */
+}
+
+.hide{
+/* display: none; */
+/* visibility: hidden;
+visibility: visible; */
+}
+
+
+.box {
+  /* height: 250px;
+  width: 200px;
+  background-color: rgb(249, 249, 149);
+  display: none; */
+}
+
+.shadow{
+    /* margin: 1em auto;
+    height: 250px;
+    width: 200px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px; */
+}
+/* .pinky{
+    display: block;
+}
+
+.pinky:hover{
+    visibility: hidden;
+} */
+
+.radius{
+    /* width: 500px;
+    height: 300px;
+    background-color: aquamarine;
+    margin: 1em; */
+    /* display: inline-block; */
+    /* border-radius: 20px 80px ; */
+    /* border-radius: 20px 0 40px 0 ; */
+    /* border-radius:38% 48% 54% 55% / 55% 58% 41% 0%  ; */
+    /* clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%); */
+}
+
+.dp{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid black;
+    outline: 5px solid pink;
+    outline-offset: 5px;
+}
+
+
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    /* background-color: aqua; */
+}
+
+.sidebar{
+    vertical-align: top;
+    height: 100%;
+    width: 25%;
+    background-color: rgb(21, 143, 143); 
+    display: inline-block;
+}
+
+.content{
+    max-height: 100%;
+    width: 74%;
+    /* background-color: rgb(5, 54, 60);  */
+    display: inline-block;
+    overflow: auto;
+
+}
+
+a{
+display: block;
+text-decoration: none;
+font-size: 18px;
+margin: 2em ;
+}
