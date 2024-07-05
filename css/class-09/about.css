@@ -1,0 +1,32 @@
+.second {
+  height: 200px;
+  width: 200px;
+  background-color: rgb(227, 164, 234);
+}
+
+/* Backgroud img */
+
+.bgImg {
+  height: 500px;
+  width: 500px;
+  border: 2px solid gray;
+
+  /* background-image: url(https://www.timedoctor.com/blog/images/2021/09/Tips-to-Improve-Teamwork-In-The-Workplace1.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative; */
+
+
+  background: url(https://cdn.prod.website-files.com/652e8c998f656fbf00cb7c99/6532431a769b1188055b60c1_teamwork-concept-on-the-brown-wooden-table-background.jpeg)  center no-repeat;
+  background-size: cover;
+}
+
+.bgChild {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(240, 248, 255, 0.422);
+}
