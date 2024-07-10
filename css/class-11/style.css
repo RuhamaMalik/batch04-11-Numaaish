@@ -1,0 +1,74 @@
+/* .box, .box2{
+    height: 50vh;
+    width: 100vw;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq3BbShkethYiu2OcaCKQW7KZuy1ubDmCwyg&s) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1{
+    color: white;
+    font-size: 5em;
+}
+
+
+.box2{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS97gDUfn4YYSiByhe94nYVJCIEpO2K3hr_1w&s);
+}
+
+
+
+.red{
+    color: red;
+} */
+
+/* CSS Variables */
+
+:root {
+    --heading : 5em;
+  --primary-color: rgb(112, 163, 83);
+  --bg-color: rgba(186, 191, 193, 0.774);
+  --box-shadow:rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+.heading2 {
+    font-size: var(--heading);
+  color: var(--box-shadow);
+  box-shadow: var(--box-shadow);
+}
+
+/* 
+.heading1{
+    background-color: var(--bg-color) ;
+} */
+
+
+.container{
+    --green : green
+}
+
+.h{
+    color: var(--green);
+}
+
+
+/* 
+.relative{
+    width: 100vw;
+    height: 50vh;
+    border: 2px solid red;
+    position: relative;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq3BbShkethYiu2OcaCKQW7KZuy1ubDmCwyg&s) no-repeat center;
+    background-size: cover;
+
+}
+
+.absolute{
+    position: absolute;
+    top:0; left: 0;right: 0; bottom: 0;
+    background-color: rgba(240, 248, 255, 0.614);
+} */

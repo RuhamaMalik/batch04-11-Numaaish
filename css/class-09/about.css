@@ -6,10 +6,10 @@
 
 /* Backgroud img */
 
-.bgImg {
+/* .bgImg {
   height: 500px;
   width: 500px;
-  border: 2px solid gray;
+  border: 2px solid gray; */
 
   /* background-image: url(https://www.timedoctor.com/blog/images/2021/09/Tips-to-Improve-Teamwork-In-The-Workplace1.jpg);
   background-position: center;
@@ -18,15 +18,26 @@
   position: relative; */
 
 
-  background: url(https://cdn.prod.website-files.com/652e8c998f656fbf00cb7c99/6532431a769b1188055b60c1_teamwork-concept-on-the-brown-wooden-table-background.jpeg)  center no-repeat;
+  /* background: url(https://cdn.prod.website-files.com/652e8c998f656fbf00cb7c99/6532431a769b1188055b60c1_teamwork-concept-on-the-brown-wooden-table-background.jpeg)  center no-repeat;
   background-size: cover;
-}
+} */
 
-.bgChild {
+/* .bgChild {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   background-color: rgba(240, 248, 255, 0.422);
+} */
+/* .bg-img{
+ width: 100em;
+height: 700px;
+background: url(https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630) no-repeat fixed center top;
 }
+
+.bg-gradient{
+  background: linear-gradient(90deg, rgba(131, 58, 180, 0.426) 0%, rgba(253, 29, 29, 0.303) 50%, rgba(252, 176, 69, 0.474) 100%);
+width: 100%;
+height: 50em;
+} */
