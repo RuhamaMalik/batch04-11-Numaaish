@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+
+header {
+  min-height: 70px;
+  max-width: 100vw;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bolder;
+  /* flex-grow: .8; */
+  text-align: center;
+  width: 30%;
+}
+
+nav {
+  /* flex-grow: 2; */
+  width: 60%;
+  display: flex;
+  /* gap: 2em; */
+  justify-content: space-evenly;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+nav a:hover {
+  color: blueviolet;
+}
+
+/*  Home */
+
+.heroSection {
+  padding-top: 75px;
+  min-height: 100vh;
+  max-width: 100vw;
+  background-color: blueviolet;
+  background: linear-gradient(rgba(237, 233, 233, 0.8), rgba(0, 0, 0, 0.8)),
+    url("https://img.freepik.com/free-photo/close-up-woman-working-laptop_23-2149300650.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1721347200&semt=ais_user")
+      no-repeat center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 2em 10em;
+}
+
+.content{
+    min-height: 60vh;
+    width: 50%;
+    color: white;
+}
+
+h1{
+    font-size: 4em;
+    width: 60%;
+    /* background-color: blue; */
+}
+
+.content h1 span {
+    color: darkcyan;
+}
+.content p {
+   font-size: 1.5em;
+}
+
+@media only screen and (max-width: 750px) {
+  header,
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2em;
+  }
+
+  .logo {
+    text-align: left;
+  }
+
+  nav {
+    row-gap: 3em;
+    /* align-items: center; */
+  }
+}
