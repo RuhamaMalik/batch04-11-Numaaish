@@ -1,0 +1,122 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.container {
+  min-height: 600px;
+  min-width: 300px;
+  max-width: 1400px;
+  background-color: lightblue;
+  padding: 2em;
+}
+
+/* <!-- Height - width, MediaQueries --> */
+
+/* 
+.child,
+.flex {
+  min-height: 40vh;
+  width: 100%;
+  background-color: rgb(198, 151, 241);
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+
+h1{
+    font-size: 5vmin;
+}
+
+.box {
+  background-color: pink;
+  width: 48%;
+  height: 500px;
+}
+
+@media (max-width: 1000px) {
+  .flex {
+    flex-direction: column;
+  }
+.box{
+    width: 95%;
+}
+
+} */
+
+/* <!-- Transition --> */
+
+/* 
+.box{
+    height: 200px;
+    width: 200px;
+    background-color: cornflowerblue;
+    transition: width 1s ease-in-out , height 1s ease-in-out ;
+}
+
+.box:hover{
+    width: 600px;
+    height: 600px;
+} */
+
+/* Animation and keyframes */
+
+.circle {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+
+  animation-name: rotate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out ;
+  /* animation-direction:alternate  ; */
+  /* animation-delay: 1s ; */
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+    /* background-color: black; */
+  }
+  to {
+    transform: rotate(360deg);
+    /* background-color: gray; */
+  }
+
+/* 0% {
+    background-color: black;
+}
+15%{
+    background-color: rgb(5, 5, 91);}
+
+25%{
+    background-color: rgb(94, 171, 11);
+}
+75%{
+    background-color: rgb(170, 79, 14);
+}
+
+100%{
+    background-color: rgb(164, 166, 168);
+
+} */
+}
+
+
+
+/* Filter */
+
+.parent:hover img{
+    filter: hue-rotate(180deg);
+}
+
+.parent:hover p{
+    color: red;
+}
