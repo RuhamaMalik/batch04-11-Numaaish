@@ -1,0 +1,27 @@
+
+
+
+
+
+
+
+
+
+*{
+    box-sizing: border-box !important;
+    font-family: "Poppins", sans-serif !important;
+}
+
+.hero{
+    background: linear-gradient(90deg, #C1DEE8 0%, #FBD9B9 100%) !important;
+
+}
+
+@media (max-width: 991px){
+    .navbar{
+    border-radius: 0 !important;
+    }
+}
+
+
+
