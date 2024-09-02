@@ -1,0 +1,11 @@
+Heigh level programmng Language
+Scripting language
+Begginer friendly
+supported by all browser
+use interpreter
+Client side and server side
+core technology of www
+Event driven laguage
+add interactivity
+Dynmic websites
+97% developers use for client side
