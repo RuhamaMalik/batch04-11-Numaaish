@@ -15,7 +15,7 @@
 
 // Data types
 // 1) Primitive --> immutable(not changable) --> direct value -- single value
-//  - string ''
+//  - string '' ""
 //  - number
 //  - boolean (true / false)
 //  - undefined
