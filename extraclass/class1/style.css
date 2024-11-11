@@ -105,6 +105,11 @@ padding: 25px 0;
 .btn{
 
 }
+@media (max-width: 1000px){
+.home{
+  flex-direction: column-reverse;
+}
+}
 
 
 @media (max-width: 770px){
@@ -121,4 +126,9 @@ nav a{
 nav{
     display: none;
 }
+
+.home img{
+ width: 300px;
+}
+
 }
