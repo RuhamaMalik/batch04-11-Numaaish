@@ -1,0 +1,113 @@
+body {
+    padding: 4em;
+    font-family: sans-serif;
+  }
+  
+  h3,
+  .ul {
+    color: rgb(36, 135, 27);
+    font-weight: 200;
+    letter-spacing: 2px;
+    line-height: 2em;
+    padding: 0 5em;
+    text-align: justify;
+  }
+  
+  .ul {
+    color: rgb(11, 132, 172);
+    background-color: lightgrey;
+    padding: 3em 6em;
+  }
+  
+  li {
+    list-style-position: outside;
+    background-color: lightgrey;
+    letter-spacing: normal;
+    padding: 0.5em;
+    font-size: 1.4em;
+    font-weight: 500;
+    margin-top: 0.5em;
+  }
+  
+  .nested {
+    color: rgb(140, 112, 112);
+    margin-left: 2em;
+  }
+  
+  .nested-2 {
+    color: rgb(33, 146, 61);
+    font-size: 1.1em;
+  }
+  
+  .example{
+      background-color: black;
+      color: lightpink;
+      padding: 2em 5em;
+      border-radius: 20px;
+      font-size: 1.5em;
+      line-height: 2em;
+  }
+  .ex{
+      color: rgb(200, 160, 239);
+  }
+  
+  .comment{
+      color: rgb(82, 84, 82);
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  @media (max-width: 900px) {
+    body {
+      padding: 1em;
+    }
+  
+    h3,
+    .ul {
+      text-align: left;
+      padding: 0 1em;
+    }
+    h3{
+      font-weight: 300;
+  
+    }
+    .ul {
+      padding: 2em 0 ;
+      padding-left: 2em;
+  
+    }
+  
+    .nested {
+      margin-left: 1em;
+    }
+    
+    .nested-2 {
+      font-size: .8em;
+      margin-left: -1.5em;
+  
+    }
+    .example{
+      padding: 2em ;
+     
+  }
+    
+  }
+  
+  @media (max-width: 500px) {
+      body {
+        padding: 0.2em;
+      }
+      .example{
+          padding: 1em ;
+         font-size: 1.1em;
+      }
+  }
