@@ -34,7 +34,7 @@ Array.prototype.customMap = function (callback) {
     // updated.push(this[i])
     updated.push(callback(this[i]))
   }
-
+                           
 return updated
 
   // return x
