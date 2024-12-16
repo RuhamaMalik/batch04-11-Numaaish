@@ -1,0 +1,124 @@
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Header */
+  
+  .navbar {
+    height: 70px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-family: sans-serif;
+    padding-left: 2em;
+    font-size: 2em;
+    font-weight: 700;
+  }
+  
+  .search-input {
+    margin-left: auto;
+    margin-right: 2em;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    outline: none;
+  }
+  
+  .search-input::placeholder {
+    color: #aaa;
+  }
+  /* Products Secton */
+  
+  .product-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 15px 0;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-items: center;
+  }
+  .no-match {
+    font-size: 5vmax;
+    color: grey;
+    width: 100%;
+    grid-area: 1/1/2/-1;
+  }
+  .product-card {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    border: 1px solid black;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .product-info {
+    padding: 20px;
+  }
+  
+  .product-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .product-price {
+    color: #e44d26;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 635px) {
+    body {
+      padding: 0;
+    }
+    .product-section {
+      padding: 20px 0;
+    }
+    .product-card {
+      width: 370px;
+    }
+  }
+  @media (max-width: 505px) {
+    .logo{
+      padding: 0 ;
+    }
+    .navbar{
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100px;
+    }
+    .search-input{
+      margin: auto;
+    }
+  
+  }
+  
+  @media (max-width: 430px) {
+    .product-card {
+      width: 90%;
+    }
+  }
