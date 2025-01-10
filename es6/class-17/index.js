@@ -24,7 +24,7 @@
 // mySymbol = Symbol("abcd")
 // console.log(mySymbol.description);
 
-// let cnic = Symbol("cnic");
+// let cnic = Symbo l("cnic");
 
 // let person = {
 //     [cnic] : "1234-4545-454",
