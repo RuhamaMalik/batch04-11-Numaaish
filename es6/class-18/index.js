@@ -24,11 +24,7 @@
 // // console.log(result.next());
 // // console.log(result.next());
 // let currentVal = result.next();
-
-// while (!currentVal.done) {
-//     console.log(currentVal.value);
-//     currentVal = result.next();
-// }
+  
 
 //////////////////// Generator
 
