@@ -13,8 +13,6 @@
 
   </head>
   <body>
-
-
     <h1 class="text-center display-1 fw-bold">Products section</h1>
     <div class="container my-5">
       <div class="row" id="recipeContainer">
@@ -24,6 +22,36 @@
 
 
 
+
+
+
+<!-- Modal -->
+<div class="modal modal-xl fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"> Recipe Detail Page </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        
+        <img id="image" src="" alt="" class="img-fluid" >
+        <h3 id="name" class="my-2">${recipe.name}</h3>
+       <ul id="ingredients">
+           </ul>
+            <h3 class="my-2">Description</h3>
+       <ul id="description">
+           </ul>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
     <script

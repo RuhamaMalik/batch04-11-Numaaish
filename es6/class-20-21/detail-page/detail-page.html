@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Page</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- <div class="container">
+    
+   </div> -->
+
+    <script>
+      ////////////// get id / Query params
+      const getQueryParam = (param) => {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      };
+
+      ////////////// get Recipe
+
+      let getRecipeDetail = async () => {
+        let recipeId = getQueryParam("id");
+
+        if (recipeId) {
+          const response = await fetch("https://dummyjson.com/recipes");
+          const data = await response.json();
+          const recipe = data?.recipes?.find(
+            (r) => r.id === parseInt(recipeId)
+          );
+
+console.log(recipe);
+
+          /////////////// INSERT Data
+          const main = document.createElement("div");
+          main.className = "container ";
+
+          main.innerHTML = `
+<h1> Recipe Detail Page </h1>
+ <img src="${recipe.image}" alt="${recipe.name}" class="img-fluid w-50" >
+ <h3 class="my-2">${recipe.name}</h3>
+<ul id="ingredients">
+    </ul>
+     <h3 class="my-2">Description</h3>
+<ul id="description">
+    </ul>
+`;
+          document.body.appendChild(main);
+
+          /////////////////// ingredients Html
+          let recipeHtml = "";
+          recipe.ingredients.forEach(
+            (ingre) => (recipeHtml += `<li>${ingre} </li>`)
+          );
+          document.getElementById("ingredients").innerHTML = recipeHtml;
+          /////////////////// ingredients Html
+          let instructionsHTML = "";
+          recipe.instructions.forEach(
+            (ins) => (instructionsHTML += `<li>${ins} </li>`)
+          );
+          document.getElementById("description").innerHTML = instructionsHTML;
+        } else {
+          document.body.innerHTML = `<p>Recipe not found</p>`;
+        }
+      };
+
+      getRecipeDetail();
+    </script>
+  </body>
+</html>
