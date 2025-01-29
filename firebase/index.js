@@ -2,7 +2,10 @@ import {
   auth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  onAuthStateChanged
+  onAuthStateChanged,
+  signOut,
+  sendEmailVerification ,
+  sendPasswordResetEmail 
 } from "./firebase.config.js";
 
 const register = async (e) => {
@@ -41,8 +44,8 @@ const signIn = async (e) => {
       email,
       password
     );
-    console.log(userCredintial?.user);
-
+    // console.log(userCredintial?.user);
+   await sendEmailVerification(auth.currentUser)
     if (userCredintial?.user) window.location.pathname = "/index.html";
   } catch (error) {
     console.log(error.message);
@@ -58,20 +61,42 @@ console.log(window.location.pathname);
 document.getElementById("login-form")?.addEventListener("submit", signIn);
 
 
+////////////////////// logOut
+
+const _signOut = ()=>{
+signOut(auth)
+}
+
+document.getElementById("SignOut")?.addEventListener("click",  _signOut);
 
 
+///////////////// Forgot Password
 
+const _fPassword =async ()=>{
+  try {
+    const email = document.getElementById("email").value;
+    await sendPasswordResetEmail(auth, email);
+  // alert("Signin Now!")
+  } catch (error) {
+    console.log(error);
+    
+  }
+}
 
+document.getElementById("fpswd")?.addEventListener("click",  _fPassword);
 
 
 
 onAuthStateChanged(auth, (user) => {
-   if (user) {
-     const uid = user.uid;
+  if (user) {
+    const uid = user.uid;
     console.log(user);
-    
-   } else {
-     console.log("user signed out");
-     
-   }
- });
+  } else {
+    console.log("user signed out");
+    if (window?.location?.pathname === "/html/profile.html" ) {
+      console.log(">>>>> ", window.location);
+      window.location.replace("/" );
+    }
+  }
+});
+
