@@ -5,7 +5,12 @@ import {
   onAuthStateChanged,
   signOut,
   sendEmailVerification ,
-  sendPasswordResetEmail 
+  sendPasswordResetEmail ,
+  updatePassword ,
+  GoogleAuthProvider ,
+  signInWithPopup,
+  signInWithRedirect ,
+  setPersistence, browserLocalPersistence 
 } from "./firebase.config.js";
 
 const register = async (e) => {
@@ -87,16 +92,56 @@ document.getElementById("fpswd")?.addEventListener("click",  _fPassword);
 
 
 
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    const uid = user.uid;
-    console.log(user);
-  } else {
-    console.log("user signed out");
-    if (window?.location?.pathname === "/html/profile.html" ) {
-      console.log(">>>>> ", window.location);
-      window.location.replace("/" );
-    }
+///////////////// Update Password
+
+const UpdatePswd =async ()=>{
+  try {
+    const user = auth.currentUser;
+    const newPswd = document.getElementById("newPswd").value;
+    await updatePassword(user, newPswd)
+    console.log("Password Updated");
+  } catch (error) {
+    console.log(error);
+    
   }
-});
+}
+
+document.getElementById("updatePswd")?.addEventListener("click",  UpdatePswd);
+
+
+/////////////////////////// sigIn With Google
+
+const provider = new GoogleAuthProvider();
+const _sigInWithGoogle = async () => {
+  try {
+    // Sign out if user is already signed in
+    await signOut(auth);
+    
+    // Thoda delay daal rahe hain sign-out ke baad
+    setTimeout(async () => {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      console.log("User signed in: ", user);
+    }, 1000); // 1 second delay
+  } catch (error) {
+    console.log("Error in Sign-in with Google");
+    console.log(error);
+  }
+};
+document.getElementById("sigInWithGoogle")?.addEventListener("click",  _sigInWithGoogle);
+
+
+
+// onAuthStateChanged(auth, (user) => {
+//   if (user) {
+//     const uid = user.uid;
+//     console.log(user);
+//   } else {
+//     console.log("user signed out");
+//     if (window?.location?.pathname === "/html/profile.html" ) {
+//       console.log(">>>>> ", window.location);
+//       window.location.replace("/" );
+//     }
+//   }
+// });
 

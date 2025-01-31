@@ -6,7 +6,12 @@ import {
   onAuthStateChanged,
   signOut,
   sendEmailVerification ,
-  sendPasswordResetEmail 
+  sendPasswordResetEmail ,
+  updatePassword ,
+  GoogleAuthProvider ,
+  signInWithPopup,
+  signInWithRedirect ,
+  setPersistence, browserLocalPersistence 
 } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -28,5 +33,10 @@ export { auth,
    onAuthStateChanged,
    signOut,
    sendEmailVerification ,
-   sendPasswordResetEmail 
+   sendPasswordResetEmail ,
+   updatePassword ,
+   GoogleAuthProvider ,
+   signInWithPopup,
+   signInWithRedirect ,
+   setPersistence, browserLocalPersistence 
    };
