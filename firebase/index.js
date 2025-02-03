@@ -9,14 +9,16 @@ import {
   updatePassword ,
   GoogleAuthProvider ,
   signInWithPopup,
-  signInWithRedirect ,
-  setPersistence, browserLocalPersistence 
+  doc, setDoc, db
 } from "./firebase.config.js";
 
 const register = async (e) => {
   e.preventDefault();
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
+  const age = document.getElementById("age").value;
+  const contact = document.getElementById("contact").value;
+  const name = document.getElementById("name").value;
 
   try {
     let userCredintial = await createUserWithEmailAndPassword(
@@ -24,7 +26,19 @@ const register = async (e) => {
       email,
       password
     );
-    console.log(userCredintial?.user);
+
+    let user = userCredintial?.user;
+
+    await setDoc(doc(db, "users", user.uid), {   ///// create user in db
+      name,
+      age,
+      contact,
+      email,
+      isActive:true
+    });
+
+    window.location.replace("/" );
+    console.log(user);
   } catch (error) {
     console.log(error.message);
   }
@@ -111,37 +125,36 @@ document.getElementById("updatePswd")?.addEventListener("click",  UpdatePswd);
 
 /////////////////////////// sigIn With Google
 
+////////////sign in with google
+
 const provider = new GoogleAuthProvider();
+provider.setCustomParameters({ prompt: "select_account" });
+
 const _sigInWithGoogle = async () => {
-  try {
-    // Sign out if user is already signed in
-    await signOut(auth);
-    
-    // Thoda delay daal rahe hain sign-out ke baad
-    setTimeout(async () => {
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-      console.log("User signed in: ", user);
-    }, 1000); // 1 second delay
-  } catch (error) {
-    console.log("Error in Sign-in with Google");
-    console.log(error);
-  }
+    try {
+        await signOut(auth);  // 🛑 Pehle Logout
+        console.log("User signed out before sign-in attempt.");
+
+        const result = await signInWithPopup(auth, provider); // 🟢 Phir Sign-in
+        console.log("User signed in:", result.user);
+    } catch (error) {
+        console.error("Google Sign-In Error:", error.message);
+    }
 };
-document.getElementById("sigInWithGoogle")?.addEventListener("click",  _sigInWithGoogle);
+
+document.getElementById("sigInWithGoogle")?.addEventListener("click", _sigInWithGoogle);
 
 
-
-// onAuthStateChanged(auth, (user) => {
-//   if (user) {
-//     const uid = user.uid;
-//     console.log(user);
-//   } else {
-//     console.log("user signed out");
-//     if (window?.location?.pathname === "/html/profile.html" ) {
-//       console.log(">>>>> ", window.location);
-//       window.location.replace("/" );
-//     }
-//   }
-// });
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.uid;
+    console.log(user);
+  } else {
+    console.log("user signed out");
+    if (window?.location?.pathname === "/html/profile.html" ) {
+      console.log(">>>>> ", window.location);
+      window.location.replace("/" );
+    }
+  }
+});
 

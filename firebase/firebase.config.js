@@ -14,6 +14,11 @@ import {
   setPersistence, browserLocalPersistence 
 } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
 
+
+import { getFirestore, doc, setDoc  } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyAfxVRQ1X2HjbNiqO5A7arnPTC_5X6-oQQ",
   authDomain: "github-firebase-1a0f0.firebaseapp.com",
@@ -26,6 +31,8 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);;
+
 
 export { auth, 
   createUserWithEmailAndPassword,
@@ -38,5 +45,6 @@ export { auth,
    GoogleAuthProvider ,
    signInWithPopup,
    signInWithRedirect ,
-   setPersistence, browserLocalPersistence 
+   setPersistence, browserLocalPersistence ,
+   db, doc, setDoc
    };
