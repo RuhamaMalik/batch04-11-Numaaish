@@ -10,12 +10,11 @@ import {
   updatePassword ,
   GoogleAuthProvider ,
   signInWithPopup,
-  signInWithRedirect ,
-  setPersistence, browserLocalPersistence 
+ 
 } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
 
 
-import { getFirestore, doc, setDoc  } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+import { getFirestore, doc, setDoc ,getDoc , collection, getDocs, onSnapshot } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
 
 
 
@@ -31,7 +30,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const db = getFirestore(app);;
+const db = getFirestore(app);
 
 
 export { auth, 
@@ -44,7 +43,5 @@ export { auth,
    updatePassword ,
    GoogleAuthProvider ,
    signInWithPopup,
-   signInWithRedirect ,
-   setPersistence, browserLocalPersistence ,
-   db, doc, setDoc
+   db, doc, setDoc, getDoc, collection, getDocs, onSnapshot 
    };

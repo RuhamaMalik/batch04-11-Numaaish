@@ -145,16 +145,3 @@ const _sigInWithGoogle = async () => {
 document.getElementById("sigInWithGoogle")?.addEventListener("click", _sigInWithGoogle);
 
 
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    const uid = user.uid;
-    console.log(user);
-  } else {
-    console.log("user signed out");
-    if (window?.location?.pathname === "/html/profile.html" ) {
-      console.log(">>>>> ", window.location);
-      window.location.replace("/" );
-    }
-  }
-});
-
