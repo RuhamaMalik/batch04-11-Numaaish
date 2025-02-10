@@ -27,12 +27,14 @@ const getAllUsers = async () => {
 
   const unsubscribe = onSnapshot(ref, (querySnapshot) => {
 
+    let index = 1;
     const usersTable = document.getElementById("all-users");
     querySnapshot.forEach((currentUser) => {
+          
       let user = currentUser.data();
       usersTable.innerHTML += `
         <tr>
-         <th scope="row">1</th>
+         <th scope="row">${index++}</th>
          <td>${user?.name}</td>
          <td>${user?.email}</td>
          <td>${user?.age}</td>

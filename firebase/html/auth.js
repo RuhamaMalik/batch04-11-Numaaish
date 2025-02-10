@@ -14,11 +14,15 @@ onAuthStateChanged(auth, async (user) => {
 
     if (docSnap.exists()) {
      let  currentUser = docSnap.data();
+     console.log(currentUser);
+     
      let username = document.getElementById("prof-username")
      let contact = document.getElementById("prof-contact")
+     let email = document.getElementById("prof-email")
 
-     if(username)username.innerHTML = currentUser.name
-     if(contact)contact.innerHTML = currentUser.contact
+     if(username)username.value = currentUser.name
+     if(contact)contact.value = currentUser.contact
+     if(email)email.innerHTML = currentUser.email
 
     } else {
       console.log("No such document!");

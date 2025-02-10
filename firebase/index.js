@@ -2,14 +2,14 @@ import {
   auth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  onAuthStateChanged,
+  onAuthStateChanged, 
   signOut,
   sendEmailVerification ,
   sendPasswordResetEmail ,
   updatePassword ,
   GoogleAuthProvider ,
   signInWithPopup,
-  doc, setDoc, db
+  doc, setDoc, db,collection, updateDoc , addDoc, serverTimestamp
 } from "./firebase.config.js";
 
 const register = async (e) => {
@@ -143,5 +143,72 @@ const _sigInWithGoogle = async () => {
 };
 
 document.getElementById("sigInWithGoogle")?.addEventListener("click", _sigInWithGoogle);
+
+
+
+//////////// UPDATE PROFILE 
+
+
+// const updateProfile = async ()=>{
+//   const name = document.getElementById("prof-username").value;
+//   const userRef = doc(db, "users", auth.currentUser.uid);
+//   console.log(auth.currentUser.uid);
+//   await updateDoc(userRef, {
+//   name
+//   });
+// }
+
+// document.getElementById("prof-username")?.addEventListener("blur", updateProfile)
+
+
+
+
+
+
+
+
+
+
+
+
+const elements = document.querySelectorAll(".update")
+  
+elements.forEach((elem)=>{
+  // document.getElementById("prof-username")
+  elem.addEventListener("blur", async ()=>{
+    
+    // console.log(elem.name);
+    
+    const userRef = doc(db, "users", auth.currentUser.uid);
+  console.log(auth.currentUser.uid);
+  await updateDoc(userRef, {
+   [elem.name]: elem.value
+  });
+  }
+  )
+
+})
+
+// ("prof-username")?.addEventListener("blur", updateProfile)
+
+
+
+
+///////////////////////// ADD DOCUMENT
+
+const addPost = async()=>{
+  const post  = await addDoc(collection(db, "posts"), {
+    image:"https://media.wired.com/photos/65e83f121400ca9720ba84e2/16:9/w_2688,h_1512,c_limit/black-hole.jpg",
+    title: "Black hole",
+    description: "A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape it.",
+  isActive:true,
+  timestamp: serverTimestamp()
+  });
+
+  console.log("Document written with ID: ", post);
+}
+
+document.getElementById("newPostBtn")?.addEventListener("click", addPost)
+
 
 

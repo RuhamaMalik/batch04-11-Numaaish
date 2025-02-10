@@ -39,15 +39,16 @@
     <div class="container">
         <div class="profile-header">
             <img src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Profile Image" class="profile-img">
-            <h2 id="prof-username">John Doe</h2>
-            <p>Web Developer | Tech Enthusiast</p>
+            <!-- <h2 id="prof-username">John Doe</h2> -->
+             <input name="name" class="form-control update" type="text" id="prof-username"   placeholder="John Doe">
+             <p>Web Developer | Tech Enthusiast</p>
         </div>
 
         <!-- Profile Details -->
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
-                    <div class="card-body">
+                     <div class="card-body">
                         <h5 class="card-title">About Me</h5>
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non purus at libero varius facilisis.</p>
                     </div>
@@ -57,8 +58,9 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Contact</h5>
-                        <p class="card-text">Email: johndoe@example.com</p>
-                        <p class="card-text">Phone: <span id="prof-contact">87847574</span></p>
+                        <p class="card-text">Email: <span id="prof-email" >johndoe@example.com</span></p>
+                        <!-- <p class="card-text">Phone: <span id="prof-contact">87847574</span></p> -->
+                        <p class="card-text">Phone:  <input name="contact" class="form-control update" type="text" id="prof-contact" placeholder="87847574"></p>
                     </div>
                 </div>
             </div>
@@ -89,6 +91,10 @@
         <button type="button" id="SignOut" class="btn btn-lg bg-warning ">SignOut</button>
        
     </div>
+
+
+    <button id="newPostBtn">CREATE POST</button>
+
 
     <!-- Bootstrap JS and Icons -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
