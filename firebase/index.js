@@ -34,7 +34,8 @@ const register = async (e) => {
       age,
       contact,
       email,
-      isActive:true
+      isActive:true,
+      timestamp:serverTimestamp()
     });
 
     window.location.replace("/" );
@@ -202,7 +203,8 @@ const addPost = async()=>{
     title: "Black hole",
     description: "A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape it.",
   isActive:true,
-  timestamp: serverTimestamp()
+  timestamp: serverTimestamp(),
+  userId: auth.currentUser.uid
   });
 
   console.log("Document written with ID: ", post);

@@ -22,7 +22,8 @@ import {
   onSnapshot,
   updateDoc,
   addDoc,
-  serverTimestamp
+  serverTimestamp,
+  query, orderBy, where
 } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -59,5 +60,6 @@ export {
   onSnapshot,
   updateDoc,
   addDoc,
-  serverTimestamp
+  serverTimestamp,
+  query, orderBy, where
 };
