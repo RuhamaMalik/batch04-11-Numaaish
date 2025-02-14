@@ -23,7 +23,7 @@ import {
   updateDoc,
   addDoc,
   serverTimestamp,
-  query, orderBy, where
+  query, orderBy, where , deleteDoc 
 } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -61,5 +61,5 @@ export {
   updateDoc,
   addDoc,
   serverTimestamp,
-  query, orderBy, where
+  query, orderBy, where, deleteDoc 
 };

@@ -7,7 +7,8 @@ import {
   orderBy,
   where,
   doc,
-  updateDoc
+  updateDoc,
+  deleteDoc 
 } from "./firebase.config.js";
 
 // const getAllUsers = async ()=>{
@@ -70,7 +71,10 @@ const getAllUsers = async () => {
            <td>${user?.email}</td>
            <td>${user?.age}</td>
            <td>${user?.isActive ? "Active" : "Block"}</td>
-           <td><button type="button" onclick="updatStatus('${_user.id}', ${user?.isActive})"  class="btn text-light bg-primary ">Edit Status</button></td>
+           <td>
+           <button type="button" onclick="updatStatus('${_user.id}', ${user?.isActive})"  class="btn text-light bg-primary ">Edit Status</button>
+           <button type="button" onclick="deleteUser('${_user.id}')"  class="btn text-light bg-danger ">Delete</button>
+           </td>
          </tr>
          `;
     });
@@ -89,4 +93,15 @@ await updateDoc(userRef, {
   isActive: !status
 });
 
+}
+
+window.deleteUser = async (id)=>{
+try {
+  const userRef = doc(db, "users", id);
+  await deleteDoc(userRef);
+ 
+} catch (error) {
+  console.log(error);
+  
+}
 }
