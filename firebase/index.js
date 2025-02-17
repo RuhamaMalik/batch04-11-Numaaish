@@ -190,6 +190,54 @@ elements.forEach((elem)=>{
 
 })
 
+
+
+///////////////// update profile Image
+
+const oldImage = document.getElementById("profImg");
+
+const uploadImg = async ()=>{
+  const file = document.getElementById("image");
+  const selectedImg = file.files[0];
+
+  const formData = new FormData()
+  formData.append("file", selectedImg)
+  formData.append("upload_preset", "firebaseXcloudinary")
+  formData.append("cloud_name", "duo0iqvpr")
+
+
+  try {
+     const response =  await fetch(`https://api.cloudinary.com/v1_1/duo0iqvpr/image/upload`,{
+          method:"POST",
+          body:formData
+      })
+
+
+         const data = await response.json()
+         const url=  data.secure_url
+
+         /////////////////////// add image in firebase
+
+         const userRef = doc(db, "users", auth.currentUser.uid);
+
+         await updateDoc(userRef, {
+           proFileImg:url
+         });
+         oldImage.src = url
+
+
+  } catch (error) {
+      console.log(error);
+      
+  }
+
+}
+
+document.querySelector("#uploadBtn").addEventListener("click", uploadImg)
+
+
+
+
 // ("prof-username")?.addEventListener("blur", updateProfile)
 
 
@@ -198,8 +246,13 @@ elements.forEach((elem)=>{
 ///////////////////////// ADD DOCUMENT
 
 const addPost = async()=>{
+  const file = document.getElementById("image");
+  const selectedImg = file.files[0];
+
+      let image =   await uploadImge(selectedImg);
+
   const post  = await addDoc(collection(db, "posts"), {
-    image:"https://media.wired.com/photos/65e83f121400ca9720ba84e2/16:9/w_2688,h_1512,c_limit/black-hole.jpg",
+    image,
     title: "Black hole",
     description: "A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape it.",
   isActive:true,
@@ -214,3 +267,75 @@ document.getElementById("newPostBtn")?.addEventListener("click", addPost)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////// Helper
+
+
+const uploadImge = async (file)=>{
+
+  const formData = new FormData()
+  formData.append("file", file)
+  formData.append("upload_preset", "firebaseXcloudinary")
+  formData.append("cloud_name", "duo0iqvpr")
+
+
+  try {
+     const response =  await fetch(`https://api.cloudinary.com/v1_1/duo0iqvpr/image/upload`,{
+          method:"POST",
+          body:formData
+      })
+
+
+         const data = await response.json()
+         return  data.secure_url
+  } catch (error) {
+      console.log(error);
+      
+  }
+
+}

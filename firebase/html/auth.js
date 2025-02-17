@@ -19,10 +19,12 @@ onAuthStateChanged(auth, async (user) => {
      let username = document.getElementById("prof-username")
      let contact = document.getElementById("prof-contact")
      let email = document.getElementById("prof-email")
+     let profImg = document.getElementById("profImg")
 
      if(username)username.value = currentUser.name
      if(contact)contact.value = currentUser.contact
      if(email)email.innerHTML = currentUser.email
+     if(profImg) profImg.src = currentUser.proFileImg
 
     } else {
       console.log("No such document!");

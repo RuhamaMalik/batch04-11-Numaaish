@@ -37,6 +37,7 @@ const getAllUsers = async () => {
     collection(db, "users"),
     // orderBy("name", "desc"),
     // where("isActive", "==", true)
+    where("gender", "==", "female")
     // where("name", "==", "aafreen") // case-sensitive
     // where("skills", "array-contains", "CSS")
 
