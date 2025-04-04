@@ -1,4 +1,7 @@
 // import { Component, } from "react";
+import Merge from "./MultipleComponent";
+import Shop from "./pages/Shop";
+
 
 
 // class App extends Component {
@@ -64,21 +67,21 @@
 // useEffect()  
 
 
-import React from "react"
+// import React from "react"
 
-function App() {
-  return (
+// function App() {
+//   return (
 
-    <>
-
-
-      <div>Hello React</div>
-      <div>Hello React</div>
-      <div>Hello React</div>
-      <div>Hello React</div>
+//     <>
 
 
-    </>
+//       <div>Hello React</div>
+//       <div>Hello React</div>
+//       <div>Hello React</div>
+//       <div>Hello React</div>
+
+
+//     </>
 
 
     // <React.Fragment>
@@ -98,7 +101,28 @@ function App() {
     // <div>Hello React</div>
     // <div>Hello React</div>
     // </div>
+//   )
+// }
+
+// export default App
+
+
+
+
+///////////////////////////////// class 3
+
+
+
+function App (){
+
+
+  return (
+    <>
+   <h1 className="myDiv" style={{color:"white", backgroundColor:"blue"}} >Helo</h1>
+   <Shop />
+   <Merge/>
+    </>
   )
 }
 
-export default App
+export default App;
