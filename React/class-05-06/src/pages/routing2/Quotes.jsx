@@ -1,35 +1,15 @@
 import { useEffect, useState } from "react"
-import { NavLink } from "react-router-dom";
+import { NavLink, useLoaderData } from "react-router-dom";
 import Button from "../../components/Button";
 
 const Quotes = () => {
-    // const [{quotes}, setQuotes] = useState([])
-    const [quotes, setQuotes] = useState([])
+// const data = useLoaderData()
+// console.log(data.quotes);
+// console.log(data.limit);
 
-    // useEffect(() => {
-    //     fetch('https://dummyjson.com/quotes')
-    //     .then(res => res.json())
-    //     .then(res => setQuotes(res?.quotes)
-    //     );
-    // }, [])
+const {quotes, limit} = useLoaderData()
 
-    const fetQuores = async () => {
-        try {
-            const res = await fetch('https://dummyjson.com/quotes');
-            const data = await res.json();
 
-            setQuotes(data.quotes);
-            //    setQuotes(data);
-
-        } catch (error) {
-            console.log(error);
-
-        }
-    }
-
-    useEffect(() => {
-        fetQuores();
-    }, [])
 
     return (
         <>
@@ -58,3 +38,16 @@ const Quotes = () => {
 }
 
 export default Quotes
+
+// class 7
+
+export const fetQuotes = async ()=>{
+    try {
+        const res = await fetch('https://dummyjson.com/quotes');
+        return  res.json();
+
+    } catch (error) {
+        console.log(error);
+
+    }
+}

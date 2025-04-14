@@ -17,7 +17,7 @@ const Header = () => {
           <NavLink className={({isActive})=> isActive ? "text-info nav-link": "nav-link"} aria-current="page" to="/home">Home</NavLink>
         </li>
         <li className="nav-item">
-        <NavLink className={({isActive})=> isActive ? "text-info nav-link": "nav-link"} aria-current="page" to="/about">About</NavLink>
+        <NavLink className={({isActive})=> isActive ? "text-info nav-link": "nav-link"} aria-current="page" to="/about/about1">About</NavLink>
         </li>
         <li className="nav-item">
         <NavLink className={({isActive})=> isActive ? "text-info nav-link": "nav-link"} aria-current="page" to="/services">Services</NavLink>

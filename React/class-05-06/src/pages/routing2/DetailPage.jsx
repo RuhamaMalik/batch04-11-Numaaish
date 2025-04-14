@@ -1,20 +1,8 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
+import { useLoaderData } from "react-router-dom"
 
 const DetailPage = () => {
-    const { id } = useParams();
-    const [quote, setQuote] = useState({})
-
-
-    useEffect(() => {
-        fetch(`https://dummyjson.com/quotes/${id}`)
-            .then(res => res.json())
-            .then(res => setQuote(res)
-            );
-    }, [])
-
-
-
+  const {author, quote, id} = useLoaderData()
+  
     return (
         <div className="card">
             <div className="card-header">
@@ -22,8 +10,8 @@ const DetailPage = () => {
             </div>
             <div className="card-body">
                 <blockquote className="blockquote mb-0">
-                    <p>{quote.quote}</p>
-                    <footer className="blockquote-footer"><cite title="Source Title">{quote.author}</cite></footer>
+                    <p>{quote}</p>
+                    <footer className="blockquote-footer"><cite title="Source Title">{author}</cite></footer>
                 </blockquote>
             </div>
         </div>
@@ -31,3 +19,17 @@ const DetailPage = () => {
 }
 
 export default DetailPage
+
+
+
+export const fetchSingleQuote = async ({id})=>{
+    try {
+
+        const res = await fetch(`https://dummyjson.com/quotes/${id}`);
+        return  res.json();
+
+    } catch (error) {
+        console.log(error);
+
+    }
+}
