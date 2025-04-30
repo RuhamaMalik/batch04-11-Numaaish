@@ -118,6 +118,7 @@ function App (){
 
   return (
     <>
+    <h1 className="text-[#584db8]"  >Test Tailwind</h1>
    <h1 className="myDiv" style={{color:"white", backgroundColor:"blue"}} >Helo</h1>
    <Shop />
    <Merge/>

@@ -70,7 +70,7 @@ const LoginForm = () => {
                 </Form.Group>
 
 
-                <Button type="submit" variant="info">Login</Button>
+                <Button  type="submit" variant="info">Login</Button>
 
             </Form>
         </>
