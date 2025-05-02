@@ -118,6 +118,8 @@ function App (){
 
   return (
     <>
+          <h3>{process.env.REACT_APP_KEY} {process.env.REACT_APP_NAME}</h3>
+
     <h1 className="text-[#584db8]"  >Test Tailwind</h1>
    <h1 className="myDiv" style={{color:"white", backgroundColor:"blue"}} >Helo</h1>
    <Shop />
