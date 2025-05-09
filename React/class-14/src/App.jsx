@@ -1,14 +1,26 @@
 ////////////// Redux
 
+import { useEffect } from "react"
 import AddTodo from "./components/AddTodo"
 import TodoList from "./components/TodoList"
+import { useDispatch } from "react-redux"
+import { addAllTasks } from "./components/features/todos/todoSlice"
 
 
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+
+const allTasks = JSON.parse(localStorage?.getItem("todos")) || []
+dispatch(addAllTasks(allTasks))
+// console.log(allTasks);
+
+  },[])
+
 
   return (
     <>
-      <h1>Redux</h1>
       <AddTodo/>
       <TodoList/>
 
