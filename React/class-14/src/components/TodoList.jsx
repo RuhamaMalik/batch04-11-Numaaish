@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { deleteAllTaks, deleteTask } from './features/todos/todoSlice'
+import { deleteAllTaks, deleteTask, updateTask } from './features/todos/todoSlice'
 
 const TodoList = () => {
   const dispatch = useDispatch()
   const todos = useSelector(state => state.todos)
   const [task, setTask] = useState("")
   // const [edit , setEdit] = useState(false)
-  const [edit, setEdit] = useState({ id: "", status: false })
+  // const [edit, setEdit] = useState({ id: "", isDisable: false })
+  const [edit, setEdit] = useState({ id: "", isDisable: true })
 
 
   // console.log(todos);
@@ -39,14 +40,42 @@ const TodoList = () => {
                   <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     {todo?.id}
                   </th>
-                  {console.log(edit.id !== todo?.id)}
-                  <td className="px-6 py-4">
-                    <input disabled={!edit.status && edit.id !== todo?.id} value={task} onChange={(e) => setTask(e.target.value)} type="text" id="text" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Add Task ..." required />
 
-                    {/* {todo?.text} */}
+                  <td className="px-6 py-4">
+                    {
+                      !edit.isDisable && edit.id === todo?.id ? (
+                        <input
+                          disabled={!edit.isDisable && edit.id !== todo?.id}
+                          value={task}
+                          onChange={(e) => setTask(e.target.value)}
+                          onKeyUp={(e) => {
+                            if (e.key === "Enter") {
+                              dispatch(updateTask({ id: todo?.id, text: task }));
+                              setTask("")
+                              setEdit({ id: "", isDisable: true })
+                            }
+
+                          }}
+                          type="text"
+                          id="text"
+                          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Add Task ..." required />
+
+                      ) : (
+                        <p> {todo?.text}</p>
+                      )
+                    }
+
+                    {/* */}
                   </td>
                   <td className="px-6 py-4">
-                    <button onClick={() => setEdit({ id: todo?.id, status: true })} className="font-medium px-4 text-blue-600 dark:text-blue-500 hover:underline">Edit</button>
+                    <button
+                      onClick={() => {
+                        setEdit({ id: todo?.id, isDisable: false });
+                        setTask(todo?.text)
+                      }}
+                      className="font-medium px-4 text-blue-600 dark:text-blue-500 hover:underline">
+                      Edit
+                    </button>
                     <button onClick={() => dispatch(deleteTask(todo?.id))} className="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</button>
                   </td>
                 </tr>
