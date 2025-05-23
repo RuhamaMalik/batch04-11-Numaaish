@@ -6,29 +6,34 @@ const url = require("url")
 
 http.createServer( (req,res)=>{
 
-        // if(req.url === "/favicon.ico"){res.end()}
-
+        if(req.url === "/favicon.ico"){res.end()}
         const reqUrl = url.parse(req.url, true)
-        console.log(reqUrl);
-         res.end("Home Page")
-// const log = `${Date.now()} : ${req.url} ----------- new request \n`;
 
-// fs.appendFile("log.txt", log , (err,data)=>{
+        const log = `${Date.now()} : ${reqUrl.pathname} --- ${req.method} ----------- new request \n`;
 
-// switch (req.url) {
-//     case "/":
-//         res.end("Home Page")
-//         break;
-//     case "/about":
-//         res.end("About Page")
-//         break;
+        fs.appendFile("log.txt", log , (err,data)=>{
 
-//     default:
-//         res.end("Page not found")
-//         break;
-// }
+          switch (reqUrl.pathname) {
+    case "/":
+        res.end("Home Page")
+        break;
+    case "/about":
+        res.end("About Page ----------- " + reqUrl.query.name)
+        break;
+    case "/user":
+        if(req.method === "GET"){
+        res.end("Pofile Page ----------- " + reqUrl.query.name)
+        }else if(req.method === "POST"){
+        res.end("User created successfully! ----------- " + reqUrl.query.name)
+        }
+        break;
 
-// })
+    default:
+        res.end("Page not found")
+        break;
+}
+
+})
 
     }
 ).listen(5000, ()=>console.log("Server is Running")

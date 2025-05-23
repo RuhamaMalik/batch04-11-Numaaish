@@ -1,9 +1,6 @@
-1747813665706 : / ----------- new request 
-1747813665732 : /favicon.ico ----------- new request 
-1747813686124 : / ----------- new request 
-1747813722510 : / ----------- new request 
-1747813722593 : /favicon.ico ----------- new request 
-1747813792804 : / ----------- new request 
-1747813792837 : /favicon.ico ----------- new request 
-1747814167602 : / ----------- new request 
-1747814167632 : /favicon.ico ----------- new request 
+1747983717337 : /about --- GET ----------- new request 
+1747983717361 : /.well-known/appspecific/com.chrome.devtools.json --- GET ----------- new request 
+1747983717426 : /favicon.ico --- GET ----------- new request 
+1747983947482 : /user --- GET ----------- new request 
+1747983947498 : /.well-known/appspecific/com.chrome.devtools.json --- GET ----------- new request 
+1747983947565 : /favicon.ico --- GET ----------- new request 
