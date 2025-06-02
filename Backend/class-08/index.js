@@ -41,6 +41,7 @@ REST FULL (REpresentational state transfer)
 
 1 ) server client arch  --- dependent nahi hen
 2 ) 
+
        GET    ------------ /getAllUsers ----- /users
        GET    ------------ /getUser/:id ----- /user/:id
        POST -------------- /createUser  ----- /user
