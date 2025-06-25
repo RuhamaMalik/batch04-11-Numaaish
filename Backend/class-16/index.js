@@ -1,7 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
-const port = 5055;
+const port = 5055; 
 
 // Middlewares
 // app.use(express.urlencoded({extended:false}))
