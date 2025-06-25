@@ -13,7 +13,7 @@ mongoose.connect(`mongodb+srv://projectzone734:rgm098765@numaaishcluster.znsqu5d
 .then(
     ()=>console.log("DB is Connected")
 ).catch((err)=>console.log("ERROR in db connection : " , err)
-)
+)    
 
 
 // Schema
